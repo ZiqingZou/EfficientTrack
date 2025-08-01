@@ -1,0 +1,49 @@
+
+# Model -------------------------------
+device: cuda
+represent: rad  # sin-cos or sin-cos-special-v or rad
+state_dim: 8  # 8 if rad, 16 if sin-cos/sin-cos-special-v
+target_dim: 4  # 4 if rad, 8 if sin-cos/sin-cos-special-v
+horizon: 10  # 20 origin, 10 for no_previous_target verison
+frequency: 20  # needed if sin-cos-special-v
+
+# predictor
+predictor_type: mlp_norm  # mlp or mlp_norm
+predictor_dropout: 0.0  # needed if using mlp_norm
+predictor_max_range: 0.5
+predictor_hidden_dim: 512
+predictor_hidden_depth: 6  # 4
+predictor_lr: 0.00001
+predictor_weight_decay: 0.003
+predictor_max_norm: 2
+predictor_discount: 1.0
+predictor_k_pos: 0.5  #
+predictor_stable_k: 0.0
+
+# controller
+controller_type: mlp_norm
+controller_dropout: 0.0  # needed if using mlp_norm
+controller_max_range: 0.5
+controller_hidden_dim: 512
+controller_hidden_depth: 6
+controller_lr: 0.00001
+controller_max_norm: 2  # 0 means no gradient clipping
+controller_T_max: 0.0
+controller_discount: 0.98
+controller_smooth_k: 1.0
+controller_stable_k: 0.0
+
+# Training ------------------------------
+batch_size: 2048
+train_horizon: 10
+
+# offline
+data_type: mix # with or without or mix (noise)
+alternating_iters: 500000  # if train.py alternating_train()
+predictor_epochs: 2000
+controller_epochs: 8000
+
+# online
+buffer_size: 100000
+
+
