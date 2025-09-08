@@ -1,10 +1,10 @@
+import os
 import time
+import shutil
 
 from collector import DataCollector
 from pid_controller import PidController
 from env import EnvCore_LocalPython
-import shutil
-import os
 
 
 def main():

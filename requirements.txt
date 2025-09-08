@@ -1,0 +1,10 @@
+# Python version
+python>=3.8.10
+
+# Core dependencies
+numpy>=1.24.4
+matplotlib>=3.7.5
+pandas>=1.5.0
+torch>=2.4.1
+sympy>=1.13.2
+wandb>=0.17.9
