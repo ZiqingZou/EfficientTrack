@@ -25,7 +25,7 @@ def main():
     os.makedirs(save_fp, exist_ok=True)
     noise = 0.0
     for i in range(1, 41):
-        collector = DataCollector(env, controller, name + str(i), save_fp, noise)
+        collector = DataCollector(env, controller, name + str(i), save_fp, noise, "train")
         collector.loopy(policy, model)
         print(name + str(i) + " done!\n")
 
@@ -35,7 +35,7 @@ def main():
     os.makedirs(save_fp, exist_ok=True)
     noise = 0.0
     for i in range(1, 9):
-        collector = DataCollector(env, controller, name + str(i), save_fp, noise, 'test')
+        collector = DataCollector(env, controller, name + str(i), save_fp, noise, "test")
         collector.loopy(policy=policy, model=model)
         print(name + str(i) + " done!\n")
 

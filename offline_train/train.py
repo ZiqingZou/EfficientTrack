@@ -8,7 +8,7 @@ from offline_train.container import Container
 import time
 
 cfg = parse_config('../config.yaml')
-wandb.init(project='real-excavator', name='round3-newtraj')
+wandb.init(project='EfficientTrack', name='simulation')
 
 epoch_p, epoch_c = 1, 1
 
