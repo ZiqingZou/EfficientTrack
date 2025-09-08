@@ -89,19 +89,19 @@ def train_controller(container, predictor, controller, base_controller):
 
 
 def train():
-    state_fp = '../real_excavator_data/train_dataset/state_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'  # simulation
-    target_fp = '../real_excavator_data/train_dataset/target_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'  # _mini
-    real_target_fp = '../real_excavator_data/train_dataset/real_target_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'
+    state_fp = '../data/simulation_data/train_dataset/state_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'  # simulation
+    target_fp = '../data/simulation_data/train_dataset/target_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'  # _mini
+    real_target_fp = '../data/simulation_data/train_dataset/real_target_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'
     container = Container(state_path=state_fp, target_path=target_fp,
                           real_target_path=real_target_fp, batch_size=cfg.batch_size)
 
     predictor = Predictor(cfg)
-    predictor.load('./state_dict/12000_predictor_4000_3.pth')  # './state_dict_real_round3/18000_predictor_2000_9.pth')
+    # predictor.load('./state_dict/12000_predictor_4000_3.pth')  # './state_dict_real_round3/18000_predictor_2000_9.pth')
     # base_predictor = Predictor(cfg)
     base_predictor = None
     # base_predictor.load('./ex1-base_state_dict/190000_predictor_2000_95.pth')
     controller = Controller(cfg)
-    controller.load('./state_dict_real_round3/18000_controller_2000_9.pth')
+    # controller.load('./state_dict_real_round3/18000_controller_2000_9.pth')
     # base_controller = Controller(cfg)
     base_controller = None
     # base_controller.load('./ex1-base_state_dict/190000_controller_2000_95.pth')
