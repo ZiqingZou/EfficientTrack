@@ -5,16 +5,16 @@ import pandas as pd
 import shutil
 
 
-folder_path = '../online_train/test_data_test'
+folder_path = './test_data_test'
 folder_path = os.path.abspath(folder_path)
 
-save_fp = '../online_train/figure_test_test'
+save_fp = './figure_test_test'
 shutil.rmtree(save_fp, ignore_errors=True)
 os.makedirs(save_fp, exist_ok=True)
 
-shutil.rmtree('../online_train/outcome_data', ignore_errors=True)
-os.makedirs('../online_train/outcome_data', exist_ok=True)
-save_path2 = '../online_train/outcome_data/test_test'
+shutil.rmtree('./outcome_data', ignore_errors=True)
+os.makedirs('./outcome_data', exist_ok=True)
+save_path2 = './outcome_data/test_test'
 
 
 def pid_plot():

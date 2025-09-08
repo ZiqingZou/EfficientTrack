@@ -52,7 +52,18 @@ python -m online_train.train
 ```
 
 ## Outcome
+To verify the tracking performance of the learned policy in simulation, run:
+
+```bash
+python -m test.test
+python -m test.analysis_test
+```
+
+To visualize the tracking performance on a real-world excavator, run the following script to generate the comparison plot:
+
+```bash
+python -m test.analysis_pid_vs_test
+```
 
 
-
-
+<img src="images/field outcome.png" alt="Real-World Tracking" width="1000"/>

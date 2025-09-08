@@ -15,9 +15,9 @@ def main():
     env = EnvCore_LocalPython()
     controller = PidController()
     policy = Controller(cfg)
-    policy.load('../offline_train/state_dict/200000_controller.pth')
+    policy.load('/offline_train/state_dict/18000_controller_2000_9.pth')
     model = Predictor(cfg)
-    model.load('../offline_train/state_dict/200000_predictor.pth')
+    model.load('/offline_train/state_dict/18000_predictor_2000_9.pth')
 
     name = 'zc_interp_train'
     save_fp = './test_data_train'
