@@ -34,7 +34,7 @@ To run the data collection process:
 python -m simulation.collect_data
 ```
 
-### CLosed-Loop Dynamics Model
+### Closed-Loop Dynamics Model
 Second, we train a closed-loop dynamics model (network_model/predictor.py) using multi-step forward and backward propagation to predict excavator observations from reference trajectories, minimizing prediction error with regularization.
 
 <img src="images/model learning.png" alt="Model Learning" width="500"/>
