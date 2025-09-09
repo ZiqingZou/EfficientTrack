@@ -8,20 +8,20 @@ import shutil
 import os
 
 
-cfg = parse_config('../config.yaml')
+cfg = parse_config('./config.yaml')
 
 
 def main():
     env = EnvCore_LocalPython()
     controller = PidController()
     policy = Controller(cfg)
-    policy.load('/offline_train/state_dict/18000_controller_2000_9.pth')
+    policy.load('./test/ex1-base_state_dict/190000_controller_2000_95.pth')
     model = Predictor(cfg)
-    model.load('/offline_train/state_dict/18000_predictor_2000_9.pth')
+    model.load('./test/ex1-base_state_dict/190000_predictor_2000_95.pth')
 
     name = 'zc_interp_train'
-    save_fp = './test_data_train'
-    shutil.rmtree(save_fp)
+    save_fp = './test/test_data_train'
+    shutil.rmtree(save_fp, ignore_errors=True)
     os.makedirs(save_fp, exist_ok=True)
     noise = 0.0
     for i in range(1, 41):
@@ -30,7 +30,7 @@ def main():
         print(name + str(i) + " done!\n")
 
     name = 'zc_interp_test'
-    save_fp = './test_data_test'
+    save_fp = './test/test_data_test'
     shutil.rmtree(save_fp, ignore_errors=True)
     os.makedirs(save_fp, exist_ok=True)
     noise = 0.0

@@ -8,8 +8,6 @@ from network_model.space_change import sincos_to_rad, sincos_to_rad_special_v
 from network_model.angle_error import angle_error
 from offline_train.container import Container
 
-from online_train.buffer import Buffer
-
 
 class Predictor(nn.Module):
     """
@@ -150,7 +148,7 @@ class Predictor(nn.Module):
         updated[:, -1, :] = new.clone()
         return updated
 
-    def update(self, container: Container or Buffer, base_predictor=None):
+    def update(self, container: Container, base_predictor=None):
         """
         Main update function. Corresponds to one iteration of model learning. 
         

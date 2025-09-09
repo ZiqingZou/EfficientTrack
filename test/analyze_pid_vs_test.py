@@ -32,12 +32,12 @@ def find_matching_files(folder1, folder2, match_len):
 
 
 def pid_plot():
-    folder1 = '../data/real_excavator_data/data_without_noise_test'
+    folder1 = './data/real_excavator_data/data_without_noise_test'
     folder1 = os.path.abspath(folder1)
-    folder2 = 'test_data_test'
+    folder2 = './test/data_outcome_test_round3'
     folder2 = os.path.abspath(folder2)
 
-    save_fp = '../figure/real_plot'
+    save_fp = './test/tracking_plot'
     shutil.rmtree(save_fp, ignore_errors=True)
     os.makedirs(save_fp, exist_ok=True)
 

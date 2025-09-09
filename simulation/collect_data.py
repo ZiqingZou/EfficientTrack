@@ -2,9 +2,9 @@ import os
 import time
 import shutil
 
-from collector import DataCollector
-from pid_controller import PidController
-from env import EnvCore_LocalPython
+from simulation.collector import DataCollector
+from simulation.pid_controller import PidController
+from simulation.env import EnvCore_LocalPython
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
     controller = PidController()
 
     name = 'zc_interp_train'
-    save_fp = './data_without_noise_train'
+    save_fp = './simulation/data/data_without_noise_train'
     shutil.rmtree(save_fp, ignore_errors=True)
     os.makedirs(save_fp, exist_ok=True)
     noise = 0.0
@@ -21,7 +21,7 @@ def main():
         collector.loopy(policy=None, model=None)
         print(name + str(i) + " done!\n")
 
-    save_fp = './data_with_noise_train'
+    save_fp = './simulation/data/data_with_noise_train'
     shutil.rmtree(save_fp, ignore_errors=True)
     os.makedirs(save_fp, exist_ok=True)
     for x in range(10):
@@ -35,7 +35,7 @@ def main():
             print(name + str(i) + " done!\n")
 
     name = 'zc_interp_test'
-    save_fp = './data_without_noise_test'
+    save_fp = './simulation/data_without_noise_test'
     shutil.rmtree(save_fp, ignore_errors=True)
     os.makedirs(save_fp, exist_ok=True)
     noise = 0.0
@@ -44,7 +44,7 @@ def main():
         collector.loopy(policy=None, model=None)
         print(name + str(i) + " done!\n")
 
-    save_fp = './data_with_noise_test'
+    save_fp = './simulation/data/data_with_noise_test'
     shutil.rmtree(save_fp, ignore_errors=True)
     os.makedirs(save_fp, exist_ok=True)
     for x in range(10):

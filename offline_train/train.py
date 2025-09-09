@@ -7,7 +7,7 @@ from offline_train.container import Container
 
 import time
 
-cfg = parse_config('../config.yaml')
+cfg = parse_config('./config.yaml')
 wandb.init(project='EfficientTrack', name='simulation')
 
 epoch_p, epoch_c = 1, 1
@@ -89,9 +89,9 @@ def train_controller(container, predictor, controller, base_controller):
 
 
 def train():
-    state_fp = '../data/simulation_data/train_dataset/state_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'  # simulation
-    target_fp = '../data/simulation_data/train_dataset/target_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'  # _mini
-    real_target_fp = '../data/simulation_data/train_dataset/real_target_' + cfg.data_type + '_' + cfg.represent + '_newtraj.pt'
+    state_fp = './data/simulation_data/train_dataset/state_' + cfg.data_type + '_' + cfg.represent + '.pt'
+    target_fp = './data/simulation_data/train_dataset/target_' + cfg.data_type + '_' + cfg.represent + '.pt'
+    real_target_fp = './data/simulation_data/train_dataset/real_target_' + cfg.data_type + '_' + cfg.represent + '.pt'
     container = Container(state_path=state_fp, target_path=target_fp,
                           real_target_path=real_target_fp, batch_size=cfg.batch_size)
 

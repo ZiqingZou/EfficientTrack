@@ -48,7 +48,7 @@ Next, we optimize a trajectory adjustment policy (network_model/controller.py) v
 To train the closed-loop dynamics model and the trajectory adjustment policy, run:
 
 ```bash
-python -m online_train.train
+python -m offline_train.train
 ```
 
 ## Outcome
@@ -56,13 +56,13 @@ To verify the tracking performance of the learned policy in simulation, run:
 
 ```bash
 python -m test.test
-python -m test.analysis_test
+python -m test.analyze_test
 ```
 
 To visualize the tracking performance on a real-world excavator, run the following script to generate the comparison plot:
 
 ```bash
-python -m test.analysis_pid_vs_test
+python -m test.analyze_pid_vs_test
 ```
 
 

@@ -10,8 +10,6 @@ from network_model.angle_error import angle_error
 from network_model.predictor import Predictor
 from offline_train.container import Container
 
-from online_train.buffer import Buffer
-
 
 class Controller(nn.Module):
     """
@@ -161,7 +159,7 @@ class Controller(nn.Module):
         updated[:, -1, :] = new.clone()
         return updated
     
-    def update(self, container: Container or Buffer, predictor: Predictor, base_controller=None):
+    def update(self, container: Container, predictor: Predictor, base_controller=None):
         """
         Main update function. Corresponds to one iteration of policy learning. 
         

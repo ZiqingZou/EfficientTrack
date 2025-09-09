@@ -28,7 +28,7 @@ class DataCollector:
         self.env = env
         self.controller = controller
         self.file_name = file_name
-        self.data = np.load('../data_process/zc_interp_npy_' + train_or_test + '/' + file_name + '.npy')
+        self.data = np.load('./data/data_process/zc_interp_npy_' + train_or_test + '/' + file_name + '.npy')
         self.data_len = len(self.data[:, 0])
 
         # self.env.reset(self.data[0, :].tolist() + [0, 0, 0, 0])

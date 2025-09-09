@@ -4,7 +4,7 @@ device: cuda
 represent: rad  # sin-cos or sin-cos-special-v or rad
 state_dim: 8  # 8 if rad, 16 if sin-cos/sin-cos-special-v
 target_dim: 4  # 4 if rad, 8 if sin-cos/sin-cos-special-v
-horizon: 10  # 20 origin, 10 for no_previous_target verison
+horizon: 20  # 20 origin, 10 for no_previous_target verison
 frequency: 20  # needed if sin-cos-special-v
 
 # predictor
