@@ -1,5 +1,8 @@
 # EfficientTrack
 
+- [full paper](https://arxiv.org/pdf/2509.17387)
+- [video](https://www.bilibili.com/video/BV12KWFzQEr7)
+
 This is the official implement of our paper: "High-precision and high-efficiency trajectory tracking for excavators based on closed-loop dynamics."
 
 EfficientTrack is a learning-enhanced trajectory tracking framework designed to tackle the complex nonlinear dynamics of hydraulic excavators, including time delays and control coupling. Traditional control methods often struggle with these challenges, while standard learning-based approaches require extensive environment interaction.
@@ -7,6 +10,7 @@ EfficientTrack is a learning-enhanced trajectory tracking framework designed to 
 EfficientTrack combines model-based learning with closed-loop dynamics to significantly improve learning efficiency and minimize tracking errors. It achieves superior precision and smoothness with fewer interactions.
 
 <img src="images/control block.png" alt="Control Block" width="1000"/>
+
 
 ## Installation
 
@@ -67,3 +71,17 @@ python -m test.analyze_pid_vs_test
 
 
 <img src="images/field outcome.png" alt="Real-World Tracking" width="1000"/>
+
+## Citation
+If you found it helpful to you, please consider citing:
+```bash
+@misc{zou2025efficienttrack,
+      title={High-Precision and High-Efficiency Trajectory Tracking for Excavators Based on Closed-Loop Dynamics}, 
+      author={Ziqing Zou and Cong Wang and Yue Hu and Xiao Liu and Bowen Xu and Rong Xiong and Changjie Fan and Yingfeng Chen and Yue Wang},
+      year={2025},
+      eprint={2509.17387},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2509.17387}, 
+}
+```
